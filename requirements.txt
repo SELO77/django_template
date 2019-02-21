@@ -1,0 +1,8 @@
+Django==2.1.7
+pytest-django==3.4.7
+gunicorn==19.9.0
+mysqlclient==1.4.2.post1
+python-dotenv==0.10.1
+django-debug-toolbar==1.11
+django-grappelli==2.12.2
+djangorestframework==3.9.1
