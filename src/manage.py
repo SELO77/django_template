@@ -2,8 +2,6 @@
 import sys
 
 
-
-
 def env_path():
     from pathlib import Path
     env_path = Path('..') / '.env'
@@ -18,7 +16,7 @@ if __name__ == '__main__':
 
     dotenv = DotEnv(env_path, verbose=False)
     dotenv_dict = dotenv.dict()
-    print("* Loaded Env")
+    print("* Loaded .env")
     for k, v in dotenv_dict.items():
         print(f'** {k}={v}')
     dotenv.set_as_environment_variables(override=True)
