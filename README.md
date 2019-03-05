@@ -6,8 +6,8 @@ this is a template that is django project included all packages in one for any s
 
 
 ### Package apps
-* actuator -
-* auth 
+* actuator
+* auth
 * email
 * sms
 * payment
