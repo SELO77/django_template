@@ -16,12 +16,11 @@ Including another URLconf
 from django.conf import settings
 from django.urls import path, include
 
-from core.admin import admin_site
+from core.admin import *
+
 
 urlpatterns = [
-    # path('admin/', admin.site.urls),
-    path('admin/', admin_site.urls),
-    # path('grappelli/', include('grappelli.urls')),
+    path('_admin/', admin_urls),
     path('', include('core.actuator.urls')),
     path('accounts/', include('core.account.urls'))
 ]

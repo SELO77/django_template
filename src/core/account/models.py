@@ -60,19 +60,22 @@ class DTAbstractBaseUser(AbstractBaseUser, PermissionsMixin):
     objects = DTManager()
 
     class Meta:
-        verbose_name = _('user')
-        verbose_name_plural = _('users')
+        # verbose_name = _('user')
+        # verbose_name_plural = _('users')
         abstract = True
 
 
 class DTAbstractPreSignUpBaseUser(models.Model):
     email = models.EmailField(_('email address'), unique=True)
     name = models.CharField(_('name'), max_length=32, null=False)
-    activation_code = models.CharField(max_length=36)
+    activation_code = models.UUIDField()
     password = models.CharField(_('password'), max_length=128, null=False)
     activated = models.BooleanField(default=False)
     create_datetime = models.DateTimeField(auto_now_add=True)
     update_datetime = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        abstract = True
 
     @classmethod
     def _generate_verification_code(cls):
@@ -90,3 +93,7 @@ class DTAbstractPreSignUpBaseUser(models.Model):
             password=make_password(password),
         )
         return obj
+
+
+class DTUser(DTAbstractBaseUser):
+    pass

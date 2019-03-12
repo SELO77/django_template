@@ -42,7 +42,8 @@ DJANGO_APPS = [
 ]
 
 PACKAGE_APPS = [
-    'core.actuator.apps'
+    'core.actuator',
+    'core.account',
 ]
 
 SERVICE_APPS = []
@@ -80,6 +81,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'project.wsgi.application'
+
+AUTH_USER_MODEL = 'account.DTUser'
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases

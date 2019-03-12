@@ -1,1 +1,1 @@
-default_app_config = 'project.core.actuator.apps.ActuatorConfig'
+default_app_config = 'core.actuator.apps.ActuatorConfig'
