@@ -1,4 +1,4 @@
-FROM python:3.7.2-jessie
+FROM python:3.7.2-alpine
 
 MAINTAINER rochan87@gmail.com
 
@@ -13,4 +13,4 @@ RUN pip install -r requirements.txt
 
 EXPOSE 80
 
-ENTRYPOINT [". ./start.sh"]
+ENTRYPOINT [". ./entry_point.sh"]
